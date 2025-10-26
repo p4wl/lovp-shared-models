@@ -1,4 +1,4 @@
-module lovp-shared-models
+module github.com/p4wl/lovp-shared-models
 
 go 1.25.1
 
