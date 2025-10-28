@@ -16,6 +16,7 @@ type EventType string
 const (
 	CREATE_USER              EventType = "user.create"
 	CREATE_NETWORK           EventType = "network.create"
+	DELETE_NETWORK           EventType = "network.delete"
 	ADD_USER_TO_NETWORK      EventType = "network.addusr"
 	REMOVE_USER_FROM_NETWORK EventType = "network.rmusr"
 	MODIFY_USER_ACCESS       EventType = "network.modusr"
@@ -37,6 +38,11 @@ type UserCreateCmd struct {
 type NetworkCreateCmd struct {
 	NetworkName string `json:"networkName"`
 	Hosts       int    `json:"hosts"` // amount of hosts for the network
+	Owner       string `json:"owner"` // username of network owner
+}
+
+type NetworkDeleteCmd struct {
+	NetworkName string `json:"networkName"`
 	Owner       string `json:"owner"` // username of network owner
 }
 
